@@ -5,7 +5,7 @@ import PortadaElectricidad from './assets/images/Electricidad/Portada.webp';
 import PortadaAutomotriz from './assets/images/Mantenimiento/Portada.webp';
 import PortadaSoldadura from './assets/images/Soldadura/Portada.webp';
 import PortadaMotos from './assets/images/Moto/Portada.webp';
-import Logo from './assets/images/logo.png';
+import Logo from './assets/images/Logo.png';
 import Radio from './assets/images/Radio.png';
 
 const LogoIcon = ({ size, className }) => {
