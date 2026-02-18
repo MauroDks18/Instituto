@@ -5,7 +5,7 @@ import taller1 from '../../assets/images/Moto/Taller 1.webp';
 import taller2 from '../../assets/images/Moto/Taller 2.webp';
 import aula1 from '../../assets/images/Moto/Aula 1.webp';
 import aula2 from '../../assets/images/Moto/Aula 2.webp';
-import logo from '../../assets/images/Logo.png';
+import Logo from '../../assets/images/Logo.png';
 
 
 const Mecanica = ({ career, onBack }) => {

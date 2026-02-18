@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Wrench, BookOpen, CheckCircle, ArrowLeft, GraduationCap, School, X } from 'lucide-react';
 import Button from '../../component/Button';
-import logo from '../../assets/images/Logo.png';
+import Logo from '../../assets/images/Logo.png';
 
 const Conduccion = ({ career, onBack }) => {
    const [selectedImage, setSelectedImage] = useState(null);
@@ -31,7 +31,7 @@ const Conduccion = ({ career, onBack }) => {
                <Button onClick={onBack} variant="ghost" className="flex items-center gap-2 mb-6 group px-0 justify-start hover:bg-transparent">
                   <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> Volver al Inicio
                </Button>
-               <div className={`inline - block px - 3 py - 1 rounded mb - 4 font - bold text - xs uppercase tracking - wider ${career.color === 'red' ? 'bg-red-600' : 'bg-yellow-500 text-black'} `}>
+               <div className={`inline-block px-3 py-1 rounded mb-4 font-bold text-xs uppercase tracking-wider ${career.color === 'red' ? 'bg-red-600' : 'bg-yellow-500 text-black'} `}>
                   {career.type}
                </div>
                <h1 className="text-4xl md:text-6xl font-black mb-4">{career.title}</h1>

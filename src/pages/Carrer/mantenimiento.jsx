@@ -5,7 +5,7 @@ import taller1 from '../../assets/images/Mantenimiento/Taller 1.webp';
 import taller2 from '../../assets/images/Mantenimiento/Taller 2.webp';
 import aula1 from '../../assets/images/Mantenimiento/Aula 1.webp';
 import aula2 from '../../assets/images/Mantenimiento/Aula 2.webp';
-import logo from '../../assets/images/Logo.png';
+import Logo from '../../assets/images/Logo.png';
 
 const Mantenimiento = ({ career, onBack }) => {
    const [selectedImage, setSelectedImage] = useState(null);
