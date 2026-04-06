@@ -36,7 +36,7 @@ const Home = ({ onSelectCareer }) => {
               </div>
 
               <div className="flex flex-col items-center lg:items-start gap-4">
-                <span className="text-yellow-500 font-bold uppercase tracking-widest text-sm">Redessss Sociales</span>
+                <span className="text-yellow-500 font-bold uppercase tracking-widest text-sm">Redes Sociales</span>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <a href="https://www.facebook.com/sudamericano1972?locale=es_LA" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded font-bold text-base transition-all shadow-[0_10px_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2 hover:-translate-y-1">
                     <Facebook size={20} /> Facebook

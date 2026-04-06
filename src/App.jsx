@@ -13,6 +13,7 @@ import MissionPage from './pages/MissionPage.jsx';
 import ObjectivesPage from './pages/ObjectivesPage.jsx';
 import NewsPage from './pages/NewsPage.jsx';
 import CoursesPage from './pages/CoursesPage.jsx';
+import { CAREERS_DATA } from './careers.js';
 
 // --- MAIN APP COMPONENT ---
 const App = () => {
@@ -24,7 +25,12 @@ const App = () => {
     const handlePopState = (event) => {
       if (event.state) {
         setCurrentView(event.state.view);
-        setSelectedCareer(event.state.career || null);
+        if (event.state.careerId) {
+          const career = CAREERS_DATA.find(c => c.id === event.state.careerId);
+          setSelectedCareer(career || null);
+        } else {
+          setSelectedCareer(null);
+        }
       } else {
         // Fallback al inicio si se llega al estado inicial (historial vacío para esta app)
         setCurrentView('home');
@@ -39,7 +45,7 @@ const App = () => {
 
   const handleNavigate = (view, careerData = null) => {
     // Guardar estado en el historial antes de navegar
-    const newState = { view, career: careerData };
+    const newState = { view, careerId: careerData ? careerData.id : null };
     const url = view === 'home' ? '/' : `#${view}`;
     window.history.pushState(newState, '', url);
 
@@ -83,34 +89,15 @@ const App = () => {
           onBack={() => handleNavigate('home')}
           onSelectCareer={(career) => handleNavigate('detail', career)}
         />
-      ) : selectedCareer && selectedCareer.id === 'soldadura' ? (
-        <Seguridad
-          career={selectedCareer}
-          onBack={() => handleNavigate('home')}
-        />
-      ) : selectedCareer && selectedCareer.id === 'automotriz' ? (
-        <Mantenimiento
-          career={selectedCareer}
-          onBack={() => handleNavigate('home')}
-        />
-      ) : selectedCareer && selectedCareer.id === 'motos' ? (
-        <Mecanica
-          career={selectedCareer}
-          onBack={() => handleNavigate('home')}
-        />
-      ) : selectedCareer && selectedCareer.id === 'conduccion' ? (
-        <Conduccion
-          career={selectedCareer}
-          onBack={() => handleNavigate('home')}
-        />
-      ) : selectedCareer && selectedCareer.id === 'electricidad' ? (
-        <Electricidad
-          career={selectedCareer}
-          onBack={() => handleNavigate('home')}
-        />
-      ) : (
-        null
-      )}
+      ) : currentView === 'detail' && selectedCareer ? (
+        <>
+          {selectedCareer.id === 'soldadura' && <Seguridad career={selectedCareer} onBack={() => handleNavigate('home')} />}
+          {selectedCareer.id === 'automotriz' && <Mantenimiento career={selectedCareer} onBack={() => handleNavigate('home')} />}
+          {selectedCareer.id === 'motos' && <Mecanica career={selectedCareer} onBack={() => handleNavigate('home')} />}
+          {selectedCareer.id === 'conduccion' && <Conduccion career={selectedCareer} onBack={() => handleNavigate('home')} />}
+          {selectedCareer.id === 'electricidad' && <Electricidad career={selectedCareer} onBack={() => handleNavigate('home')} />}
+        </>
+      ) : null}
 
       {/* Footer siempre visible */}
       <Footer />
