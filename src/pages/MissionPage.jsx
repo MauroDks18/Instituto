@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, Target, Lightbulb } from 'lucide-react';
+import Logo from '../assets/images/Logo.png';
 
 const MissionPage = ({ onBack }) => {
   useEffect(() => window.scrollTo(0, 0), []);
   return (
     <div className="bg-slate-900 min-h-screen pt-24 pb-12 relative overflow-hidden">
       {/* Elementos decorativos de fondo */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none z-0">
+         <img src={Logo} alt="Marca de agua gigante" className="w-[80vw] md:w-[800px] object-contain grayscale" />
+      </div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-[100px]"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-600/10 rounded-full blur-[100px]"></div>
 

@@ -28,7 +28,7 @@ const Navbar = ({ onNavigate }) => {
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-black text-white leading-none tracking-tight drop-shadow-sm">C.C.T.S.A.</span>
-            <span className="text-[10px] font-bold text-yellow-500 tracking-wider uppercase">Centro De Capacitacion Tecnica  Sud Americano</span>
+            <span className="text-[20px] font-bold text-yellow-500 tracking-wider uppercase">Centro De Capacitacion tecnica "SUDAMERICANO"</span>
           </div>
         </div>
 

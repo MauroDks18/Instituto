@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import Favicon from '../assets/images/CC.ico';
 import ObjetivosImg from '../assets/images/Objetivos.webp';
+import Wallpaper3 from '../assets/images/Wallpaper 3.webp';
 
 const ObjectivesPage = ({ onBack }) => {
   useEffect(() => {
@@ -24,9 +25,13 @@ const ObjectivesPage = ({ onBack }) => {
   ];
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-12">
-      <div className="container mx-auto px-6">
-        <button onClick={onBack} className="flex items-center gap-2 text-slate-500 hover:text-slate-900 mb-8 transition-colors group font-medium">
+    <div className="bg-slate-900 min-h-screen pt-24 pb-12 relative overflow-hidden">
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-40 pointer-events-none">
+         <img src={Wallpaper3} alt="Fondo Logo" className="w-full h-full object-cover" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <button onClick={onBack} className="flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors group font-medium">
           <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> Volver al Inicio
         </button>
 
@@ -34,9 +39,9 @@ const ObjectivesPage = ({ onBack }) => {
           <div className="flex flex-col md:flex-row gap-12 items-start">
              
              <div className="flex-1">
-                <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 font-bold rounded-full text-sm mb-4">Metas Institucionales</div>
-                <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">Nuestros Objetivos</h1>
-                <p className="text-xl text-slate-600 mb-8">
+                <div className="inline-block px-4 py-2 bg-blue-500 text-white font-bold rounded-full text-sm mb-4">Metas Institucionales</div>
+                <h1 className="text-4xl md:text-5xl font-black text-white mb-6">Nuestros Objetivos</h1>
+                <p className="text-xl text-slate-300 mb-8">
                    Trabajamos día a día con metas claras para garantizar el éxito de nuestra comunidad educativa.
                 </p>
                 <img 
@@ -48,11 +53,11 @@ const ObjectivesPage = ({ onBack }) => {
 
              <div className="flex-1 space-y-6 mt-8 md:mt-0">
                 {objectives.map((obj, index) => (
-                   <div key={index} className="flex gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
-                      <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center shrink-0 font-bold text-black shadow-lg">
+                   <div key={index} className="flex gap-4 p-4 rounded-xl bg-slate-800/50 backdrop-blur-sm hover:bg-slate-800 transition-colors border border-slate-700 hover:border-yellow-500 group">
+                      <div className="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center shrink-0 font-bold text-black shadow-[0_0_15px_rgba(234,179,8,0.3)] group-hover:scale-110 transition-transform">
                          {index + 1}
                       </div>
-                      <p className="text-slate-700 font-medium text-lg pt-1">{obj}</p>
+                      <p className="text-slate-200 font-medium text-lg pt-1">{obj}</p>
                    </div>
                 ))}
              </div>
